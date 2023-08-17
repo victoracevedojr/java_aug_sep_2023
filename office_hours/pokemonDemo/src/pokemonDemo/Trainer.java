@@ -81,7 +81,15 @@ public class Trainer {
 			}
 		}
 		System.out.println("Both Pokemon selected!");
-		// Wednesday we'll add logic to pick moves and battle!
+		// Grab the Pokemon for battle!
+		Pokemon firstTrainerPokemon = this.pokemon.get(firstPokemonIndex);
+		Pokemon secondTrainerPokemon = otherTrainer.getPokemon().get(secondPokemonIndex);
+		// Battle until one Pokemon is down to 0 HP, which means a loss
+		while (firstTrainerPokemon.getCurrentHP() > 0 && secondTrainerPokemon.getCurrentHP() > 0) {
+			// Have both Pokemon battle each other
+			firstTrainerPokemon.battlePokemon(secondTrainerPokemon);
+			secondTrainerPokemon.battlePokemon(firstTrainerPokemon);
+		}
 	}
 	
 	// Catching a Pokemon
