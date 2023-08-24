@@ -12,7 +12,7 @@
 - Discussion topics are unlocked!  This week's are due Sunday, August 6, by 11:59 PM Pacific!!
 - To pass the course:
     - 10/11 core assignments
-    - 10/16 discussion topics
+    - 11/16 discussion topics (it is actually 11, not 10 as originally stated)
     - Pass the belt exam with any belt
 
 ## Lecture outline:
