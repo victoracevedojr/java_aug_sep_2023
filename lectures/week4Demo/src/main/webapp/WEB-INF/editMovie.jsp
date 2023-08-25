@@ -9,11 +9,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Create Movie</title>
+<title>Edit movie</title>
 </head>
 <body>
-	<h1>Let's add a movie!</h1>
-	<form:form modelAttribute="newMovie" method="POST" action="/movies/new">
+	<h1>Edit movie:</h1>
+	<form:form action="/movies/${ thisMovie.id }/update" method="post" modelAttribute="thisMovie">
+		<!-- Allow us to use a PUT request -->
+		<input type="hidden" name="_method" value="put">
 		<p>
 			<form:label path="title">Title:</form:label>
 			<form:errors path="title"/>
@@ -32,15 +34,15 @@
 		<p>
 			<form:label path="releaseYear">Release year:</form:label>
 			<form:errors path="releaseYear"/>
-			<form:input type="number" path="releaseYear" value="1890"/>
+			<form:input type="number" path="releaseYear"/> <!-- No value="" here so that we can use the year from our database -->
 		</p>
 		<p>
 			<form:label path="rating">Rating:</form:label>
 			<form:errors path="rating"/>
 			<form:select path="rating" items="${possibleRatings}"/>
 		</p>
-		<input type="submit" value="Add movie"/>
+		<input type="submit" value="Edit movie"/>
 	</form:form>
-	<p><a href="/movies/all">View all movies</a></p>
+	<p><a href="/movies/all">All movies</a></p>
 </body>
 </html>

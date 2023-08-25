@@ -1,6 +1,7 @@
 package com.adrianbarnard.week4demo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -30,10 +31,25 @@ public class MovieService {
 		return movieRepository.findByTitle(title);
 	}
 	
-	// THURSDAY: Read one movie
+	// Read one movie
+	public Movie getOneMovie(Long id) {
+		Optional<Movie> movieOrEmpty = movieRepository.findById(id);
+		return movieOrEmpty.isPresent() ? movieOrEmpty.get() : null; // One-line version of the code below using a ternary operator
+//		if (movieOrEmpty.isPresent()) {
+//			return movieOrEmpty.get(); // Return Movie object
+//		} else {
+//			return null; // No object found, so return null
+//		}
+	}
 	
-	// THURSDAY: Update a movie
+	// Update a movie
+	public Movie updateMovie(Movie updatedMovie) {
+		return movieRepository.save(updatedMovie);
+	}
 	
-	
-	// THURSDAY: Delete a movie
+	// Delete a movie
+	public void removeMovie(Long id) {
+		movieRepository.deleteById(id);
+//		movieRepository.delete(movieToRemove); // movieToRemove would be a Movie object
+	}
 }
