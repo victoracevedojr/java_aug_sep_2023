@@ -6,6 +6,7 @@
 /not_for_github
 .metadata
 **/application-dev.properties
+/lectures/testProject
 
 ## Auto-generated from STS
 HELP.md

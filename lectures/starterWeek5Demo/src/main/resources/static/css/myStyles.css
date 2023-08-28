@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h1 {
+    margin: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: mediumaquamarine;
+    justify-content: flex-end;
+}
+
+nav h1 {
+	flex: 10;
+}
+nav a {
+    text-decoration: none;
+    flex: 2;
+    color: lightyellow;
+    margin: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+h1, p {
+    margin: 10px;
+}
+
+.btn, .btn-delete {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+    font-size: 12pt;
+    text-decoration: none;
+}
+
+.btn {
+	background-color: lightyellow;
+}
+
+.btn-delete {
+    background-color: lightsalmon;
+}
+
+form {
+	display: inline; /* For making the delete form button inline */
+}
