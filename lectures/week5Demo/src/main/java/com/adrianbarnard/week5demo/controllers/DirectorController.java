@@ -1,4 +1,4 @@
-package com.adrianbarnard.starterweek5demo.controllers;
+package com.adrianbarnard.week5demo.controllers;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
-import com.adrianbarnard.starterweek5demo.models.Director;
-import com.adrianbarnard.starterweek5demo.models.Movie;
-import com.adrianbarnard.starterweek5demo.services.DirectorService;
+import com.adrianbarnard.week5demo.models.Director;
+import com.adrianbarnard.week5demo.models.Movie;
+import com.adrianbarnard.week5demo.services.DirectorService;
 
 import jakarta.validation.Valid;
 
@@ -26,7 +26,7 @@ public class DirectorController {
 
 	// Route to SHOW the new director form
 	@GetMapping("/directors/create")
-	public String addMovieForm(@ModelAttribute("newDirector") Director newDirector) { // Fixed bug here
+	public String addMovieForm(@ModelAttribute("newDirector") Director newDirector) { 
 		// The ModelAttribute will hold a Director object (initially empty)
 		return "createDirector.jsp";
 	}
