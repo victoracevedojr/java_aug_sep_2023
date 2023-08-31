@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adrianbarnard.week5demo.models.Director;
+import com.adrianbarnard.week5demo.models.Movie;
 import com.adrianbarnard.week5demo.repositories.DirectorRepository;
 
 @Service
@@ -37,6 +38,14 @@ public class DirectorService {
 	
 	// Delete a director
 	public void removeDirector(Long id) {
-		directorRepository.deleteById(id);
+		Optional<Director> thisDirector = directorRepository.findById(id);
+		if (thisDirector.isPresent()) { // If director is found
+			Director actualDirector = thisDirector.get(); // Grab actual Director object
+			// Remove this director from all movies currently linked to them - but do NOT delete the Movies themselves
+			for (Movie thisMovie: actualDirector.getMovies()) {
+				thisMovie.setMovieDirector(null); // Sever the connection between this Movie and the current Director we're about to remove
+			}
+			directorRepository.deleteById(id); // Now we'll remove the Director
+		}
 	}
 }
