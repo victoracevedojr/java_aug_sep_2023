@@ -28,11 +28,11 @@
 - Adding Performers to the Movies/Directors project (whatever we don't finish today will be done tomorrow)
     - Determine how to implement many-to-many relationship
     - Add needed files
-    - CREATE a performer
-    - READ all performers
-    - READ one performer
-    - UPDATE one performer
-    - DELETE one performer
-    - Link a performer and movie
-    - Remove links between performers and movies
-    - Test fully to make sure project works in all cases
+- CREATE a performer
+- READ all performers
+- Link a performer and movie
+- Remove links between performers and movies (will do Wednesday)
+- READ one performer
+- UPDATE one performer (will do Wednesday)
+- DELETE one performer (will do Wednesday)
+- Test fully to make sure project works in all cases (will do Wednesday)
