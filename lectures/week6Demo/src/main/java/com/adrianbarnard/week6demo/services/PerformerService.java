@@ -42,15 +42,16 @@ public class PerformerService {
 	
 	// Delete a performer (will fix in Wednesday's lecture)
 	public void removePerformer(Long id) {
-//		Optional<Performer> thisPerformer = performerRepository.findById(id);
-//		if (thisPerformer.isPresent()) { // If performer is found
-//			Performer actualPerformer = thisPerformer.get(); // Grab actual Performer object
-//			// Remove this performer from all movies currently linked to them - but do NOT delete the Movies themselves
-//			for (Movie thisMovie: actualPerformer.getMovies()) {
-//				thisMovie.setMoviePerformer(null); // Sever the connection between this Movie and the current Performer we're about to remove
-//			}
+		Optional<Performer> thisPerformer = performerRepository.findById(id);
+		if (thisPerformer.isPresent()) { // If performer is found
+			Performer actualPerformer = thisPerformer.get(); // Grab actual Performer object
+			// Remove this performer from all movies currently linked to them - but do NOT delete the Movies themselves
+			for (Movie thisMovie: actualPerformer.getPerformerMovies()) {
+				thisMovie.getPerformers().remove(actualPerformer); // Sever the connection between this Movie and the current Performer we're about to remove
+				movieRepository.save(thisMovie); // Save the updated movie in the database
+			}
 			performerRepository.deleteById(id); // Now we'll remove the Performer
-//		}
+		}
 	}
 	
 	// Link a new movie to this performer
@@ -61,7 +62,19 @@ public class PerformerService {
 			return null;
 		}
 		Movie thisMovie = possibleMovie.get();
-		thisPerformer.getPerformerMovies().add(thisMovie);
-		return performerRepository.save(thisPerformer);
+		thisPerformer.getPerformerMovies().add(thisMovie); // Note the .add() method here as this is a List
+		return performerRepository.save(thisPerformer); // Save changes to DB
+	}
+	
+	// Link a new movie to this performer
+	public Performer removeMovieFromPerformer(Long performerId, Long movieId) {
+		Performer thisPerformer = this.getOnePerformer(performerId);
+		Optional<Movie> possibleMovie = movieRepository.findById(movieId);
+		if (possibleMovie.isEmpty()) {
+			return null;
+		}
+		Movie thisMovie = possibleMovie.get();
+		thisPerformer.getPerformerMovies().remove(thisMovie); // Note the .remove() method to delete from a List
+		return performerRepository.save(thisPerformer); // Save changes to DB
 	}
 }

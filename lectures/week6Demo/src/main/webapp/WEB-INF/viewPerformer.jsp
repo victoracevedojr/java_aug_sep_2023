@@ -27,7 +27,15 @@
 	<p>All movies that feature this performer:</p>
 	<ul>
 		<c:forEach var="thisMovie" items="${thisPerformer.performerMovies }"><!--  Notice we're grabbing the attribute that holds all movies linked to this performer -->
-			<li value="${ thisMovie.id }"><c:out value="${thisMovie.title}"/></li>
+			<li>
+			<c:out value="${thisMovie.title}"/>
+			<form method="POST" action="/performers/removeMovie">
+				<input type="hidden" name="_method" value="DELETE"/>
+				<input type="hidden" name="movie_id" value="${ thisMovie.id }"/>
+				<input type="hidden" name="performer_id" value="${ thisPerformer.id }"/>
+				<input type="submit" value="Remove movie"/>
+			</form>
+			</li>
 		</c:forEach>
 	</ul>
 	<form method="POST" action="/performers/${ thisPerformer.id }/addMovie">
