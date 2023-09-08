@@ -11,7 +11,7 @@
     - Student Roster n:m
 - Discussion topics are unlocked!  This week's are due Sunday, September 10, by 11:59 PM Pacific
 - To pass the course:
-    - 10/11 core assignments total (through this week, we have 8 core assignments)
+    - 10/11 core assignments total
     - 11/16 discussion topics (it is actually 11, not 10)
     - Pass the belt exam with any belt
 

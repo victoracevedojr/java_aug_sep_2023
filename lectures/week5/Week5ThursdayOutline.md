@@ -9,7 +9,7 @@
 - Discussion topics are unlocked!  This week's are due Sunday, September 3, by 11:59 PM Pacific - NOT Monday, September 4!!
 - NO instructors or TAs available Monday, September 4, due to holiday
 - To pass the course:
-    - 10/11 core assignments total (through this week, we have 8 core assignments)
+    - 10/11 core assignments total (through this week, we have 10 core assignments)
     - 11/16 discussion topics (it is actually 11, not 10)
     - Pass the belt exam with any belt
 

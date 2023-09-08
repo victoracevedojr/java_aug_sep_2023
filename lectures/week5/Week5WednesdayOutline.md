@@ -8,7 +8,7 @@
     - NONE - however, you might find the Student Roster 1:n optional assignment useful for practicing 1:n relationships
 - Discussion topics are unlocked!  This week's are due Sunday, September 3, by 11:59 PM Pacific - NOT Monday, September 4!!
 - To pass the course:
-    - 10/11 core assignments total (through this week, we have 8 core assignments)
+    - 10/11 core assignments total (through this week, we have 10 core assignments)
     - 11/16 discussion topics (it is actually 11, not 10)
     - Pass the belt exam with any belt
 
